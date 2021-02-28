@@ -7,7 +7,7 @@ class Checkout extends Component {
 
     state = {
         ingredients: null,
-        price: 0,
+        totalPrice: 0,
     }
 
     componentWillMount() {
@@ -45,7 +45,7 @@ class Checkout extends Component {
                     path={this.props.match.path + '/contact-data'}
                     render={(props) => (<ContactData
                         ingredients={this.state.ingredients}
-                        price={this.totalPrice}
+                        price={this.state.totalPrice}
                         {...props}
                     />)} />
             </div>

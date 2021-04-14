@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { createStores } from 'redux';
+import { createStore } from 'redux';
 
 import './index.css';
 import App from './App';
 import reducer from './store/reducer';
 
-const store = createStores(reducer);
+const store = createStore(reducer);
 
 const app = (
   <Provider store={store}>

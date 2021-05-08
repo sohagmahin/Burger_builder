@@ -4,21 +4,17 @@ import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
-import axios from '../../axios-orders';
 import LoadingSpinner from '../../components/UI/Spinner/Spinner';
 import spinner from '../../components/UI/Spinner/Spinner';
 import * as actionTypes from '../../store/actions/actionsTypes';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
+import axios from '../../axios-orders';
 import * as burgerBuilderActions from '../../store/actions/index'
 import { connect } from 'react-redux';
 class BurgerBuilder extends React.Component {
 
     state = {
-        ingredients: null,
-        purchasable: false,
         purchasing: false,
-        loading: false,
-        error: null,
     }
 
     updatePurchaseState(ingredients) {
@@ -45,16 +41,6 @@ class BurgerBuilder extends React.Component {
         this.props.history.push('/checkout');
     }
 
-
-    componentDidMount() {
-        axios.get('https://react-burger-builder-6e91f-default-rtdb.firebaseio.com/ingredients.json')
-            .then(response => {
-                this.setState({ ingredients: response.data });
-            })
-            .catch(error => {
-                this.setState({ error: true });
-            });
-    }
 
     render() {
         let disabledInfo = {
@@ -88,10 +74,6 @@ class BurgerBuilder extends React.Component {
                 cancelPurchased={this.purchasingCancleHandler}
                 continuedPurchase={this.purchasedContinue}
             />);
-        }
-
-        if (this.state.loading) {
-            orderSummary = <LoadingSpinner />;
         }
 
         return (

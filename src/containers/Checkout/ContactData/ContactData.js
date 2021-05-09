@@ -103,7 +103,7 @@ class ContactData extends Component {
 
         const order = {
             ingredients: this.props.ings,
-            price: this.props.price,
+            price: this.props.price.toFixed(2),
             orderData: formData
         }
 

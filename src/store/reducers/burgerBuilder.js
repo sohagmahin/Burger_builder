@@ -2,7 +2,7 @@ import * as actionTypes from '../actions/actionsTypes';
 
 const initialState = {
     ingredients: null,
-    totalPrice: 0,
+    totalPrice: 4.00,
     error: false,
 }
 
@@ -38,6 +38,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 ingredients: action.ingredients,
+                totalPrice: 4.00,
                 error: false
             }
 

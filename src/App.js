@@ -26,12 +26,13 @@ class App extends React.Component {
       </Switch>
     );
     if (this.props.isAuthenticated) {
-      routes = (<Switch>
-        <Route path="/checkout" component={Checkout} />
-        <Route path="/orders" component={Orders} />
-        <Route path="/logout" component={Logout} />
-        <Route path="/" exact component={BurgerBuilder} />
-      </Switch>
+      routes = (
+        <Switch>
+          <Route path="/checkout" component={Checkout} />
+          <Route path="/orders" component={Orders} />
+          <Route path="/logout" component={Logout} />
+          <Route path="/" exact component={BurgerBuilder} />
+        </Switch>
       );
     }
     return (

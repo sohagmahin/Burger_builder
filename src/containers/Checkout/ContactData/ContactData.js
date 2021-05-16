@@ -9,7 +9,6 @@ import * as actions from '../../../store/actions/index';
 import { updateObject, checkValidity } from '../../../shared/utility'
 
 import { connect } from 'react-redux';
-
 class ContactData extends Component {
 
     state = {
@@ -110,12 +109,9 @@ class ContactData extends Component {
         }
 
         this.props.onOrderBurger(order, this.props.token);
-
-        // console.log(this.props.ingredients);
     }
 
     inputChangedHandler = (event, inputIdentifier) => {
-        console.log(event.target.value);
 
         const updatedFormElement = updateObject(this.state.orderForm[inputIdentifier], {
             value: event.target.value,

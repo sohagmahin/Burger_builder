@@ -5,8 +5,6 @@ import BuildControls from '../../components/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 import LoadingSpinner from '../../components/UI/Spinner/Spinner';
-import spinner from '../../components/UI/Spinner/Spinner';
-import * as actionTypes from '../../store/actions/actionsTypes';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import axios from '../../axios-orders';
 import * as actions from '../../store/actions/index'
